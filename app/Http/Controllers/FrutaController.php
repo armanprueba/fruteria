@@ -13,7 +13,7 @@ class FrutaController extends Controller
     public function index()
     {
         $frutas = Fruta::get();
-        return view('frutas.index', compact('frutas'));
+        return view('frutas.listado', compact('frutas'));
     }
 
     /**
