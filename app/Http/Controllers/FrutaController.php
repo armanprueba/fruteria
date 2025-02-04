@@ -29,7 +29,13 @@ class FrutaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fruta = new Fruta();
+        $fruta->nombre = $request->nombre;
+        $fruta->temporada = $request->temporada;
+        $fruta->precio = $request->precio;
+        $fruta->stock = $request->stock;
+        $fruta->save();
+        return response()->json($fruta, 201);
     }
 
     /**
@@ -45,7 +51,12 @@ class FrutaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $fruta = Fruta::findOrFail($id);
+        $fruta->nombre = $request->nombre;
+        $fruta->temporada = $request->temporada;
+        $fruta->precio = $request->precio;
+        $fruta->stock = $request->stock;
+        $fruta->save();
     }
 
     /**

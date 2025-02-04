@@ -29,7 +29,11 @@
     <td>$fruta->stock</td>
     <td>
         <a href="{{ route('update', $fruta->id) }}">Actualizar</a>
-        <a href="{{ route('destroy', $fruta->id) }}">Borrar</a>
+        <form action="{{ route('destroy', $fruta->id) }}" method="POST">
+        @method('DELETE')
+        @csrf
+        <button>Borrar</button>
+        </form>
     </td>
 @empty
 <li>No hay frutas</li>
