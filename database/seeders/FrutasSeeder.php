@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use App\Models\Libro;
+use App\Models\Fruta;
 
 class FrutasSeeder extends Seeder
 {
@@ -15,12 +15,11 @@ class FrutasSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        $libro = new Libro();
-        $libro->editorial = $faker->randomElement(['Alfguara','Palneta','
-        Bromera']);
-        $libro->precio = 10;
-        $libro->created_at= date('Y-m-d H:m:s');
-        $libro->updated_at = date('Y-m-d H:m:s');
-        $libro->save();
+        $fruta = new Fruta();
+        $fruta->nombre = $faker->randomElement(['Platano','Pera','Fresa', 'Sandia', 'Melón', 'Ciruela', 'Manzana']);
+        $fruta->temporada = $faker->randomElement(['Primavera','Verano','Otoño', 'Diciembre']);
+        $fruta->precio= $faker->numberBetween($min = 0.5, $max = 4.2);
+        $fruta->stock= $faker->numberBetween($min = 1, $max = 20);
+        $fruta->save();
     }
 }

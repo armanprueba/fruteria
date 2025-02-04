@@ -13,7 +13,7 @@ class FrutaController extends Controller
     public function index()
     {
         $frutas = Fruta::get();
-        return view('frutas.listado', compact('frutas'));
+        return view('frutas.index', compact('frutas'));
     }
 
     /**
@@ -61,6 +61,8 @@ class FrutaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Fruta::findOrFail($id)->delete();
+        $frutas = Fruta::get();
+        return view('frutas.index', compact('frutas'));
     }
 }
