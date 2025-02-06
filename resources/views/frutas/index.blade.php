@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
 @extends('plantilla')
 @section('titulo', 'Listado de libros')
 @section('contenido')
 <h1>Listado de libros</h1>
-<table>
+<table class="table table-dark">
 <tr>
     <th>ID</th>
     <th>Nombre</th>
@@ -18,22 +11,27 @@
     <th>Precio</th>
     <th>Stock</th>
     <th>Imágen</th>
+    <th>ACCION</th>
 </tr>
 <ul>
 @forelse ($frutas as $fruta)
 <tr>
-    <td>$fruta->id</td>
-    <td>$fruta->nombre</td>
-    <td>$fruta->temporada</td>
-    <td>$fruta->precio</td>
-    <td>$fruta->stock</td>
-    <td>$fruta->imagen</td>
+    <td>{{$fruta->id}}</td>
+    <td>{{$fruta->nombre}}</td>
+    <td>{{$fruta->temporada}}</td>
+    <td>{{$fruta->precio}}</td>
+    <td>{{$fruta->stock}}</td>
+    <td>{{$fruta->imagen}}</td>
     <td>
-        <a href="{{ route('update', $fruta->id) }}">Actualizar</a>
-        <form action="{{ route('destroy', $fruta->id) }}" method="POST">
-        @method('DELETE')
-        @csrf
-        <button>Borrar</button>
+        <form action="{{ route('Frutas.update', $fruta->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <button>Actualizar</button>
+        </form>
+        <form action="{{ route('Frutas.destroy', $fruta->id) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <button>Borrar</button>
         </form>
     </td>
 @empty
@@ -41,5 +39,3 @@
 @endforelse </tr>
 </table>
 @endsection
-</body>
-</html>

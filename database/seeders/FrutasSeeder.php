@@ -14,12 +14,16 @@ class FrutasSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create();
-        $fruta = new Fruta();
-        $fruta->nombre = $faker->randomElement(['Platano','Pera','Fresa', 'Sandia', 'Melón', 'Ciruela', 'Manzana']);
-        $fruta->temporada = $faker->randomElement(['Primavera','Verano','Otoño', 'Diciembre']);
-        $fruta->precio= $faker->numberBetween($min = 0.5, $max = 4.2);
-        $fruta->stock= $faker->numberBetween($min = 1, $max = 20);
-        $fruta->save();
+        for($i=0;$i<=5;$i++){
+            $faker = Faker::create();
+            $fruta = new Fruta();
+            $fruta->nombre = $faker->randomElement(['platano','pera','Fresa', 'sandia', 'melón', 'naranja', 'manzana']);
+            $fruta->temporada = $faker->randomElement(['Primavera','Verano','Otoño', 'Diciembre']);
+            $fruta->precio= $faker->numberBetween($min = 0.5, $max = 4.2);
+            $fruta->stock= $faker->numberBetween($min = 1, $max = 20);
+            $fruta->imagen= $faker->randomElement(['platano.jpg','pera.jpg','Fresa.jpg', 'sandia.jpg', 'melón.jpg', 'naranja.jpg', 'manzana.jpg']);
+            $fruta->save();
+        }
+        
     }
 }

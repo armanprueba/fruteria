@@ -13,6 +13,8 @@ class FrutaController extends Controller
     public function index()
     {
         $frutas = Fruta::get();
+
+
         return view('frutas.index', compact('frutas'));
     }
 
@@ -44,7 +46,7 @@ class FrutaController extends Controller
         }
 
         $fruta->save();
-        return redirect()->route('frutas.index');
+        redirect()->route('frutas.index');
     }
 
     /**
@@ -73,7 +75,7 @@ class FrutaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return view('frutas.update');
     }
 
     /**
