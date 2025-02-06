@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('temporada');
             $table->float('precio');
             $table->int('stock');
+            $table->string('imagen');
             $table->timestamps();
         });
     }

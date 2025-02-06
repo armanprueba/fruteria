@@ -34,8 +34,17 @@ class FrutaController extends Controller
         $fruta->temporada = $request->temporada;
         $fruta->precio = $request->precio;
         $fruta->stock = $request->stock;
+        if($request->hasfile('imagen'))
+        {
+            $file = $request->file('imagen');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('uploads/frutas/', $filename);
+            $student->imagen = $filename;
+        }
+
         $fruta->save();
-        return response()->json($fruta, 201);
+        return redirect()->route('frutas.index');
     }
 
     /**

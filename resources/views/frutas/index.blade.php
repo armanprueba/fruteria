@@ -17,7 +17,7 @@
     <th>Temporada</th>
     <th>Precio</th>
     <th>Stock</th>
-    <th>Action</th>
+    <th>Imágen</th>
 </tr>
 <ul>
 @forelse ($frutas as $fruta)
@@ -27,6 +27,7 @@
     <td>$fruta->temporada</td>
     <td>$fruta->precio</td>
     <td>$fruta->stock</td>
+    <td>$fruta->imagen</td>
     <td>
         <a href="{{ route('update', $fruta->id) }}">Actualizar</a>
         <form action="{{ route('destroy', $fruta->id) }}" method="POST">
