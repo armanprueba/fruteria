@@ -1,5 +1,5 @@
 @extends('plantilla')
-@section('content')
+@section('contenido')
 
 <div class="container">
     <div class="row justify-content-center">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('Frutas.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-3">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleDataList" class="form-label">Temporada</label>
-                            <select name="temporada[]" class="custom-select custom-select-sm" aria-label="Default select example" required multiple>
+                            <select class="custom-select custom-select-sm" aria-label="Default select example" required multiple>
                                 <option value="Primavera">Primavera</option>
                                 <option value="Verano">Verano</option>
                                 <option value="Otoño">Otoño</option>
@@ -29,15 +29,15 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="typeNumber">Precio</label>
-                            <input type="number" min="0.5" max="10" name="precio" required class="form-control">
+                            <input type="float" min="0,5" max="10" name="precio" required class="form-control">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="typeNumber">Stock</label>
                             <input type="number" min="10" max="100" name="stock" required class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="customFile">Upload Image</label>
-                            <input type="file" name="image" required class="course form-control" id="customFile"/>
+                            <label class="form-label" for="customFile">Imagen</label>
+                            <input type="text" name="image" class="course form-control" id="customFile"/>
                         </div>
                         <div class="mb-3">
                             <input type="submit" id="submit" name="btnSubir" value="Subir"> 

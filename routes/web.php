@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 Route::resource('Frutas', FrutaController::class);
 
+

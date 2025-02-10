@@ -13,8 +13,6 @@ class FrutaController extends Controller
     public function index()
     {
         $frutas = Fruta::get();
-
-
         return view('frutas.index', compact('frutas'));
     }
 
@@ -24,6 +22,7 @@ class FrutaController extends Controller
     public function create()
     {
         //
+        return view('frutas.create');
     }
 
     /**
@@ -36,17 +35,12 @@ class FrutaController extends Controller
         $fruta->temporada = $request->temporada;
         $fruta->precio = $request->precio;
         $fruta->stock = $request->stock;
-        if($request->hasfile('imagen'))
-        {
-            $file = $request->file('imagen');
-            $extenstion = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extenstion;
-            $file->move('uploads/frutas/', $filename);
-            $student->imagen = $filename;
-        }
-
+        $fruta->imagen = $request->imagen;
         $fruta->save();
-        redirect()->route('frutas.index');
+
+        $frutas = Fruta::get();
+        return view('frutas.index', compact('frutas'));
+        
     }
 
     /**
@@ -55,6 +49,7 @@ class FrutaController extends Controller
     public function show(string $id)
     {
         //
+        
     }
 
     /**
@@ -63,11 +58,8 @@ class FrutaController extends Controller
     public function edit(string $id)
     {
         $fruta = Fruta::findOrFail($id);
-        $fruta->nombre = $request->nombre;
-        $fruta->temporada = $request->temporada;
-        $fruta->precio = $request->precio;
-        $fruta->stock = $request->stock;
-        $fruta->save();
+      
+        return view('frutas.update',compact('fruta'));
     }
 
     /**
@@ -75,7 +67,13 @@ class FrutaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return view('frutas.update');
+        $fruta = Fruta::findOrFail($id);
+        $fruta->nombre = $request->nombre;
+        $fruta->temporada = $request->temporada;
+        $fruta->precio = $request->precio;
+        $fruta->stock = $request->stock;
+        $fruta->save();
+        return redirect()->route('Frutas.index');
     }
 
     /**

@@ -23,7 +23,7 @@
     <td>{{$fruta->stock}}</td>
     <td>{{$fruta->imagen}}</td>
     <td>
-        <form action="{{ route('Frutas.update', $fruta->id) }}" method="POST">
+        <form action="{{ route('Frutas.edit', $fruta->id) }}">
             @csrf
             @method('PUT')
             <button>Actualizar</button>
