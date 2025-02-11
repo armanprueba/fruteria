@@ -72,6 +72,7 @@ class FrutaController extends Controller
         $fruta->temporada = $request->temporada;
         $fruta->precio = $request->precio;
         $fruta->stock = $request->stock;
+        $fruta->imagen = $request->imagen;
         $fruta->save();
         return redirect()->route('Frutas.index');
     }

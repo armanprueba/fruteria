@@ -36,7 +36,7 @@
                             <input type="number" min="10" max="100" name="stock" required class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="customFile">Imagen</label>
+                            <label class="form-label" for="customFile">Imágen</label>
                             <input type="text" name="image" class="course form-control" id="customFile"/>
                         </div>
                         <div class="mb-3">

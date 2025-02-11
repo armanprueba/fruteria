@@ -36,8 +36,8 @@
                             <input type="number" min="10" max="100" name="stock" value="{{$fruta->stock}}" required class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="customFile">Upload Image</label>
-                            <input type="file" name="image" class="course form-control" value="{{$fruta->imagen}}" id="customFile"/>
+                            <label class="form-label" for="customFile">Imágen</label>
+                            <input type="text" name="image" class="course form-control" id="customFile"/>
                         </div>
                         <div class="mb-3">
                             <input type="submit" id="submit" name="btnSubir" value="Subir"> 

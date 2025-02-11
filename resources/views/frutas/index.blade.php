@@ -21,7 +21,8 @@
     <td>{{$fruta->temporada}}</td>
     <td>{{$fruta->precio}}</td>
     <td>{{$fruta->stock}}</td>
-    <td>{{$fruta->imagen}}</td>
+
+    <td><img src="{{ $fruta->imagen }}" alt="{{ $fruta->nombre }}" class="rounded-circle" width="80" height="100"></td>
     <td>
         <form action="{{ route('Frutas.edit', $fruta->id) }}">
             @csrf
@@ -36,6 +37,7 @@
     </td>
 @empty
 <li>No hay frutas</li>
-@endforelse </tr>
+@endforelse 
+</tr>
 </table>
 @endsection
