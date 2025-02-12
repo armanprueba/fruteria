@@ -1,8 +1,8 @@
 
 @extends('plantilla')
-@section('titulo', 'Listado de libros')
+@section('titulo', 'Listado de frutas')
 @section('contenido')
-<h1>Listado de libros</h1>
+<h1>Listado de frutas</h1>
 <table class="table table-dark">
 <tr>
     <th>ID</th>
@@ -22,7 +22,7 @@
     <td>{{$fruta->precio}}</td>
     <td>{{$fruta->stock}}</td>
 
-    <td><img src="{{ $fruta->imagen }}" alt="{{ $fruta->nombre }}" class="rounded-circle" width="80" height="100"></td>
+    <td><img src="{{ $fruta->imagen }}" alt="{{ $fruta->nombre }}" class="rounded-circle" width="100" height="100"></td>
     <td>
         <form action="{{ route('Frutas.edit', $fruta->id) }}">
             @csrf
@@ -35,6 +35,7 @@
             <button>Borrar</button>
         </form>
     </td>
+    
 @empty
 <li>No hay frutas</li>
 @endforelse 

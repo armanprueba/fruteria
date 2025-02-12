@@ -18,7 +18,7 @@ class FrutasSeeder extends Seeder
         $imagenes = [
             'Manzana' => "https://www.recetasnestlecam.com/sites/default/files/2022-04/tipos-de-manzana-royal-gala.jpg",//'https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c11c.png',
             'Plátano' => 'https://disfrutaverdura.com/1033-large_default/platanos-800g.jpg',
-            'Melón' => 'https://assets.stickpng.com/images/580b57fcd9996e24bc43c163.png',
+            'Melón' => 'https://purepng.com/public/uploads/large/purepng.com-melonmelonfleshy-fruitfruitkind-of-berrypepo-1701527335082hgtjj.png',
             'Pera' => 'https://www.frutality.es/wp-content/uploads/frutality-fruta_pera_verde.png',
             'Naranja' => 'https://png.pngtree.com/png-clipart/20210718/original/pngtree-orange-fruit-ingredients-close-up-png-image_6529699.jpg',
             'Sandía' => 'https://assets.stickpng.com/images/580b57fcd9996e24bc43c1a5.png',

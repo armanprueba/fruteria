@@ -20,7 +20,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleDataList" class="form-label">Temporada</label>
-                            <select class="custom-select custom-select-sm" aria-label="Default select example" required multiple>
+                            <select name="temporada" class="custom-select custom-select-sm" aria-label="Default select example" multiple>
                                 <option value="Primavera">Primavera</option>
                                 <option value="Verano">Verano</option>
                                 <option value="Otoño">Otoño</option>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Imágen</label>
-                            <input type="text" name="image" class="course form-control" id="customFile"/>
+                            <input type="text" name="imagen" required class="form-control">
                         </div>
                         <div class="mb-3">
                             <input type="submit" id="submit" name="btnSubir" value="Subir"> 
