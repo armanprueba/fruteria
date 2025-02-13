@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use App\Models\Fruta;
 
 class FrutaController extends Controller
@@ -10,6 +11,13 @@ class FrutaController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function __construct()
+     {
+     $this->middleware('auth',
+     ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+     }
+     
     public function index()
     {
         $frutas = Fruta::get();
@@ -38,8 +46,16 @@ class FrutaController extends Controller
         $fruta->imagen = $request->imagen;
         $fruta->save();
 
+        /*
+        Si no usasemos redirect necesitariamos usar esto:
         $frutas = Fruta::get();
         return view('frutas.index', compact('frutas'));
+        
+        Lo cual nos haría que al recargar la página, justo después de crear una fruta,
+        se vuelva a añadir la fruta en la página por cada vez que recargasemos
+        */
+
+        return redirect()->route('Frutas.index');
         
     }
 

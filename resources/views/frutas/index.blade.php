@@ -1,4 +1,3 @@
-
 @extends('plantilla')
 @section('titulo', 'Listado de frutas')
 @section('contenido')
@@ -11,7 +10,9 @@
     <th>Precio</th>
     <th>Stock</th>
     <th>Imágen</th>
+    @if(auth()->check())
     <th>ACCION</th>
+    @endif
 </tr>
 <ul>
 @forelse ($frutas as $fruta)
@@ -23,6 +24,7 @@
     <td>{{$fruta->stock}}</td>
 
     <td><img src="{{ $fruta->imagen }}" alt="{{ $fruta->nombre }}" class="rounded-circle" width="100" height="100"></td>
+    @if(auth()->check())
     <td>
         <form action="{{ route('Frutas.edit', $fruta->id) }}">
             @csrf
@@ -35,6 +37,7 @@
             <button>Borrar</button>
         </form>
     </td>
+    @endif
     
 @empty
 <li>No hay frutas</li>
