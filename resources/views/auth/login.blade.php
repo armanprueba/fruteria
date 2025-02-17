@@ -12,7 +12,7 @@
 <div class="form-group">
 <label for="login">Login:</label>
 <input type="text" class="form-control"
-name="login" id="login" />
+name="name" id="login" />
 </div>
 <div class="form-group">
 <label for="password">Password:</label>

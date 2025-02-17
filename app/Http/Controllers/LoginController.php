@@ -19,7 +19,7 @@ class LoginController extends Controller
         if (Auth::attempt($credenciales))
     {
         // Autenticación exitosa
-        return redirect()->intended(route('libros.index'));
+        return redirect()->intended(route('Frutas.index'));
     } else {
         $error = 'Usuario incorrecto';
         return view('auth.login', compact('error'));
